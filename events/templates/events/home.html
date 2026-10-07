@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Countdown</title>
+
+    {% load static %}
+
+    <link rel="stylesheet"
+          href="{% static 'events/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>⏳ Event Countdown</h1>
+        <p>Never miss an important event</p>
+    </header>
+
+
+    <main>
+
+        {% for event in events %}
+
+        <div class="event-card">
+
+            {% if event.image %}
+                <img src="{{ event.image.url }}"
+                     alt="{{ event.title }}">
+            {% endif %}
+
+            <h2>{{ event.title }}</h2>
+
+            <p>{{ event.description }}</p>
+
+            <p class="event-date">
+                {{ event.event_date }}
+            </p>
+
+
+            <div class="countdown"
+                 data-date="{{ event.event_date|date:'Y-m-d H:i:s' }}">
+
+                <div>
+                    <span class="days">00</span>
+                    <small>Days</small>
+                </div>
+
+                <div>
+                    <span class="hours">00</span>
+                    <small>Hours</small>
+                </div>
+
+                <div>
+                    <span class="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+
+                <div>
+                    <span class="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No events available.</p>
+
+        {% endfor %}
+
+    </main>
+
+
+    <script src="{% static 'events/countdown.js' %}">
+    </script>
+
+</body>
+
+</html>

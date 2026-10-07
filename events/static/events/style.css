@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+
+header p {
+    color: #666;
+}
+
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.event-card img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.event-card h2 {
+    margin: 20px 0 10px;
+    font-size: 30px;
+}
+
+
+.event-date {
+    margin: 15px 0;
+    color: #666;
+}
+
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+
+.countdown div {
+    min-width: 100px;
+    padding: 20px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.countdown span {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+.countdown small {
+    display: block;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .countdown div {
+        min-width: 70px;
+        padding: 12px 5px;
+    }
+
+    .countdown span {
+        font-size: 22px;
+    }
+}
